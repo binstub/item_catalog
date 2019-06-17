@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+<h1>Items in {{category}}</h1>
+
+<div>
+  {% for item in items %}
+     <a href="{{ url_for('show_item', category_name=category, item_name=item.title) }}"> <br />
+       {{ item.title }}
+     </a>
+   {% endfor %}
+ </div>
+{% if logged_in == True %}
+ <div class="">
+      <a class="btn btn-primary" data-title="Add" href="{{ url_for('add_item', category_name=category, logged_in=logged_in) }}">
+        		<span class="">Add</span>
+      </a>
+{% endif %}
+  </div>
+  <div>
+      <a class="btn btn-light" data-title="Back" href="{{ url_for('show_categories') }}">
+
+
+        <span class="">Back</span>
+      </a>
+  </div>
+
+{% endblock %}

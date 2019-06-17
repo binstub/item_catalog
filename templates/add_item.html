@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h1></h1>
+<form action="{{ url_for('add_item', category_name=category) }}" method="post">
+  <div class="">
+
+    <div class="">
+      <h2>Add Item to <strong>{{ category }}</strong> Category</h2>
+    </div>
+
+    <div class="">
+
+      <div class="form-group">
+        <label for="item_title" class="">Title</label>
+        <input required type="text" id="item_title" class="form-control" name="item_title">
+      </div>
+
+      <!-- Textarea for description input -->
+      <div class="form-group">
+        <label for="item_desc" class="">Description</label>
+        <textarea id="item_desc" class="form-control" name="item_desc"></textarea>
+      </div>
+      <button type="submit" class="btn btn-sm btn-primary"> SUBMIT </button >
+
+    </div>
+  </div>
+</form>
+<a data-title="Cancel" href= {{url_for('show_items',category_name=category)}}><button type="cancel" class="btn btn-sm btn-light">Cancel</button></a>
+{% endblock %}

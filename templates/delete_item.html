@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h1></h1>
+
+<form action="{{ url_for('del_item', item_name=item.title) }}" method="post">
+  <div class="">
+
+    <div class="">
+      <h2>Delete <strong>{{ item.title }}</strong></h2>
+    </div>
+
+    <div class="">
+      Are you sure you want to delete this item?
+
+      <button type="submit" class="">Delete</button >
+
+    </div>
+  </div>
+</form>
+<a href = "{{url_for('show_item',category_name=category_name,item_name=item.title)}}">
+      <button type="button"> Cancel</button>
+    </a>
+{% endblock %}

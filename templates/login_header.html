@@ -1,0 +1,11 @@
+<div class="">
+		{% if 'username' not in session %}
+		<a href="{{url_for('/login')}}">
+			<button type="button" class="btn btn-login">Login</button>
+		</a>
+		{% else %}
+		<a href="{{url_for('/gdisconnect')}}">
+			<button type="button" class="btn btn-login">Logout</button>
+		</a>
+		{% endif %}
+</div>
